@@ -7,7 +7,20 @@ This was heavily influenced by a session I watched on [O'Reilly](https://learnin
 
 The first step in this is to get some data. That's often one of the hardest parts of the entire process. I pulled the data out of [BeerAdvocate](https://www.beeradvocate.com/). To run the code as I have it, you will need to sign up for an account there (and you might think about writing some reviews as well ;-). 
 
-Next, you need to build the model...
+After you have created an acccount on BeerAdvocate, you will need to install a Selenium driver on your system. I've used Firefox, so I installed the [geckodriver](https://github.com/mozilla/geckodriver/releases). This [gist](https://gist.github.com/cgoldberg/4097efbfeb40adf698a7d05e75e0ff51) has a script to do that if you don't know how. 
 
-Lastly, publish the model and website...
+I strongly encourage you to use [virtualenv](https://virtualenv.pypa.io/en/latest/) to create a virtual environment. It'll just make things easier in the long run. 
+
+Once you are ready to go, create a .env file in the directory where you have cloned the code and put your BeerAdvocate username and password into the file. It should look like this:
+
+```
+BA_USERNAME="your_username"
+BA_PASSWORD="your_password"
+```
+
+Now, run `make all` to install the requirements and do a quick sanity check. Then, you are ready to run `python popular_beer_scrape.py` to get the data. It will be downloaded to a csv file in the current directory. 
+
+Next, you need to build the model. To do that, run `jupyter notebook`. A browser should launch on your computer. Open the model-beer.ipynb file and run through the code. At the end, it will create a pickle file that has the model stored and ready to go for serving up on the web. 
+
+I'll follow up with a few more clarifications and publishing the model to the web soon.
 
