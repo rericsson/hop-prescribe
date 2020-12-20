@@ -22,5 +22,7 @@ Now, run `make all` to install the requirements and do a quick sanity check. The
 
 Next, you need to build the model. To do that, run `jupyter notebook`. A browser should launch on your computer. Open the model-beer.ipynb file and run through the code. At the end, it will create a pickle file that has the model stored and ready to go for serving up on the web. 
 
-I'll follow up with a few more clarifications and publishing the model to the web soon.
+The last part of this is creating a simple [Flask](https://flask.palletsprojects.com/en/1.1.x/) app to serve up the model. This is the simplest thing you can possibly do here. You can run it by using the command `python app.py`. This will serve a page at `http:\\localhost:8000` where you can interact with the model.
 
+I learned quite a bit doing this. I'm not that impressed with the prescriptions right now as they don't vary much on the input. That's probably, again, because the ratings are more nuanced and it seems that people don't just highly like one style and not like the others. Instead, ratings seem to be on some other aspect. In any event, the purpose of this wasn't to discover a new beer that I might like (although I might have done that as well), it was to go through the steps of creating a
+recommender engine. Cheers!

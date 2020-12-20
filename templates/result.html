@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hop Prescribe</title>
+    </head>
+    <body>
+        <main>
+            <h1>Hop Presribe</h1>
+            <h3>You should try: </h3>
+            {% for suggestion in suggestions %}
+            <p>{{ suggestion }}</p>
+            {% endfor %}
+        </main>
+    </body>
+</html>
